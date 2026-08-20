@@ -27,6 +27,23 @@ export function initLenis() {
   })
   gsap.ticker.lagSmoothing(0)
 
+  // La hauteur réelle de la page (donc la limite de scroll que Lenis calcule)
+  // dépend d'éléments qui finissent de charger après le montage initial :
+  // la photo du portrait, les polices Google Fonts (Amiri change la hauteur
+  // des lignes une fois chargée). En local, tout est déjà en cache, donc le
+  // bug ne se voit pas — en production, la mesure prise trop tôt plafonne le
+  // scroll avant le vrai bas de page et rend le footer inatteignable. On
+  // recalcule donc explicitement une fois que tout est vraiment prêt.
+  const refresh = () => {
+    lenis?.resize()
+    ScrollTrigger.refresh()
+  }
+  window.addEventListener('load', refresh)
+  document.fonts?.ready?.then(refresh)
+  // Filet de sécurité supplémentaire pendant les ~1,5s où le loader et les
+  // animations d'entrée peuvent encore faire bouger la mise en page.
+  setTimeout(refresh, 1600)
+
   // Fait passer les liens d'ancre (#section) par le scroll fluide de Lenis
   // plutôt qu'un saut instantané natif, avec un décalage pour le header sticky.
   document.addEventListener('click', (e) => {
