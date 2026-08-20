@@ -1,5 +1,6 @@
 <template>
-  <section class="section" id="apropos">
+  <section class="section blob-host" id="apropos">
+    <OrganicBlob />
     <div class="container">
       <div class="section-head" v-reveal>
         <span class="tag">{{ t('about.tag') }}</span>
@@ -29,8 +30,14 @@
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import AppIcon from './AppIcon.vue'
+import OrganicBlob from './OrganicBlob.vue'
 
 const { t, tm } = useI18n()
 const icons = ['book', 'users', 'heart', 'moon']
 const values = computed(() => tm('about.values'))
 </script>
+
+<style scoped>
+.blob-host{position:relative;}
+.blob-host > .container{position:relative;z-index:1;}
+</style>

@@ -24,7 +24,7 @@
           <AppIcon v-if="!isDark" name="sun" :size="20" />
           <AppIcon v-else name="moon" :size="20" />
         </button>
-        <a href="#dons" class="btn btn-gold btn-sm">{{ t('common.ctaDonate') }}</a>
+        <a href="#dons" class="btn btn-gold btn-sm" v-magnetic>{{ t('common.ctaDonate') }}</a>
         <button
           class="menu-toggle"
           type="button"

@@ -1,24 +1,31 @@
 <template>
-  <section class="hero" id="accueil">
-    <div class="hero-bg" aria-hidden="true">
+  <section class="hero" id="accueil" ref="heroEl">
+    <div class="hero-bg" aria-hidden="true" ref="bgEl">
       <div class="hero-gradient"></div>
       <canvas ref="canvasEl" id="particles"></canvas>
+      <GeometricSignature />
       <div class="hero-pattern"></div>
+      <div class="hero-grain"></div>
     </div>
-    <div class="container hero-inner" v-reveal>
-      <p class="eyebrow">{{ t('hero.eyebrow') }}</p>
+    <div class="container hero-inner" ref="foreEl">
+      <p class="eyebrow" v-reveal>{{ t('hero.eyebrow') }}</p>
       <h1 class="hero-title">
-        {{ t('hero.titleLine1') }} <span class="text-gold">{{ t('hero.titleGold') }}</span>
+        <KineticText :text="t('hero.titleLine1')" tag="span" trigger="load" :delay="0.15" />{{ ' ' }}<span class="text-gold"><KineticText :text="t('hero.titleGold')" tag="span" trigger="load" :delay="0.45" /></span>
       </h1>
-      <blockquote class="hero-quote">
-        <AppIcon name="quote" :size="28" />
-        <p>{{ t('hero.quoteText') }}</p>
-        <cite>{{ t('hero.quoteCite') }}</cite>
-      </blockquote>
-      <p class="hero-sub">{{ t('hero.sub') }}</p>
-      <div class="hero-cta">
-        <a href="#rejoindre" class="btn btn-primary">{{ t('common.ctaJoin') }} <AppIcon name="arrow" :size="18" /></a>
-        <a href="#dons" class="btn btn-outline">{{ t('common.ctaDonate') }}</a>
+      <div class="hero-quote-row" v-reveal="750">
+        <div class="hero-portrait" role="img" aria-label="Portrait de Cheikh Ahmadou Bamba (Serigne Touba)">
+          <span class="hero-portrait-ring"></span>
+        </div>
+        <blockquote class="hero-quote glass-card">
+          <AppIcon name="quote" :size="28" />
+          <KineticText class="quote-kinetic" :text="t('hero.quoteText')" tag="p" trigger="load" :delay="0.9" />
+          <cite>{{ t('hero.quoteCite') }}</cite>
+        </blockquote>
+      </div>
+      <p class="hero-sub" v-reveal="1300">{{ t('hero.sub') }}</p>
+      <div class="hero-cta" v-reveal="1450">
+        <a href="#rejoindre" class="btn btn-primary" v-magnetic>{{ t('common.ctaJoin') }} <AppIcon name="arrow" :size="18" /></a>
+        <a href="#dons" class="btn btn-outline" v-magnetic>{{ t('common.ctaDonate') }}</a>
       </div>
       <div class="hero-scroll" aria-hidden="true">
         <AppIcon name="chevron" :size="22" />
@@ -30,17 +37,28 @@
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import AppIcon from './AppIcon.vue'
+import GeometricSignature from './GeometricSignature.vue'
+import KineticText from './KineticText.vue'
+import { prefersReducedMotion } from '../composables/motion'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const { t } = useI18n()
 const canvasEl = ref(null)
+const heroEl = ref(null)
+const bgEl = ref(null)
+const foreEl = ref(null)
 let ctx, particles = [], rafId = null, resizeHandler = null
+let parallaxTrigger = null
 
 function setupParticles() {
   const canvas = canvasEl.value
   if (!canvas || !canvas.getContext) return
   ctx = canvas.getContext('2d')
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const reduceMotion = prefersReducedMotion()
 
   function resize() {
     canvas.width = canvas.offsetWidth * devicePixelRatio
@@ -86,9 +104,27 @@ function setupParticles() {
   window.addEventListener('resize', resizeHandler)
 }
 
-onMounted(setupParticles)
+function setupParallax() {
+  if (prefersReducedMotion() || !heroEl.value) return
+  parallaxTrigger = ScrollTrigger.create({
+    trigger: heroEl.value,
+    start: 'top top',
+    end: 'bottom top',
+    scrub: 0.6,
+    onUpdate: (self) => {
+      gsap.set(bgEl.value, { yPercent: self.progress * 18 })
+      gsap.set(foreEl.value, { yPercent: -self.progress * 10, opacity: 1 - self.progress * 0.6 })
+    },
+  })
+}
+
+onMounted(() => {
+  setupParticles()
+  setupParallax()
+})
 onUnmounted(() => {
   if (rafId) cancelAnimationFrame(rafId)
   if (resizeHandler) window.removeEventListener('resize', resizeHandler)
+  parallaxTrigger?.kill()
 })
 </script>

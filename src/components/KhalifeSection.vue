@@ -1,7 +1,7 @@
 <template>
   <section class="section section-alt" id="khalife">
     <div class="container">
-      <div class="khalife-card" v-reveal>
+      <div class="khalife-card" v-reveal v-tilt>
         <div class="khalife-photo" role="img" aria-label="Portrait du guide spirituel du dahira">
           <span class="khalife-photo-ring"></span>
         </div>
@@ -9,7 +9,7 @@
           <span class="tag">{{ t('khalife.tag') }}</span>
           <h2>{{ t('khalife.title') }}</h2>
           <blockquote class="inline-quote">
-            <p>{{ t('khalife.quote') }}</p>
+            <KineticText :text="t('khalife.quote')" tag="p" trigger="scroll" />
           </blockquote>
           <p class="khalife-name">{{ t('khalife.name') }}</p>
           <p class="khalife-note">{{ t('khalife.note') }}</p>
@@ -21,5 +21,6 @@
 
 <script setup>
 import { useI18n } from 'vue-i18n'
+import KineticText from './KineticText.vue'
 const { t } = useI18n()
 </script>

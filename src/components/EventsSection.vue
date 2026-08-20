@@ -17,17 +17,17 @@
           </div>
         </div>
         <div class="countdown">
-          <div class="cd-unit"><span>{{ days }}</span><small>{{ t('events.countdown.days') }}</small></div>
-          <div class="cd-unit"><span>{{ hours }}</span><small>{{ t('events.countdown.hours') }}</small></div>
-          <div class="cd-unit"><span>{{ mins }}</span><small>{{ t('events.countdown.mins') }}</small></div>
-          <div class="cd-unit"><span>{{ secs }}</span><small>{{ t('events.countdown.secs') }}</small></div>
+          <FlipUnit :value="days" :label="t('events.countdown.days')" />
+          <FlipUnit :value="hours" :label="t('events.countdown.hours')" />
+          <FlipUnit :value="mins" :label="t('events.countdown.mins')" />
+          <FlipUnit :value="secs" :label="t('events.countdown.secs')" />
         </div>
       </div>
       <p class="event-disclaimer">{{ t('events.countdown.disclaimer') }}</p>
 
       <!-- Cartes événements -->
       <div class="events-grid">
-        <article class="event-card" v-for="(card, i) in cards" :key="i" v-reveal>
+        <article class="event-card" v-for="(card, i) in cards" :key="i" v-reveal v-tilt>
           <div class="event-date"><span>{{ card.day }}</span><small>{{ card.month }}</small></div>
           <div class="event-body">
             <h3>{{ card.title }}</h3>
@@ -45,6 +45,7 @@ import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useCountdown } from '../composables/useCountdown'
 import AppIcon from './AppIcon.vue'
+import FlipUnit from './FlipUnit.vue'
 
 const { t, tm } = useI18n()
 const cards = computed(() => tm('events.cards'))

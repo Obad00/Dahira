@@ -14,6 +14,7 @@
           :class="{ 'span-2': i === 0, video: item.video }"
           :style="{ '--i': i + 1 }"
           v-reveal
+          v-tilt
           @click="openLightbox(item.caption, i)"
         >
           <span class="gallery-ph"></span>
@@ -25,15 +26,19 @@
     </div>
 
     <!-- Lightbox -->
-    <div class="lightbox" v-if="lightboxOpen" @click.self="closeLightbox">
-      <button class="lightbox-close" aria-label="Fermer" @click="closeLightbox">
-        <AppIcon name="close" :size="26" />
-      </button>
-      <div class="lightbox-content">
-        <div class="lightbox-ph" :style="lightboxStyle"></div>
-        <p class="lightbox-caption">{{ lightboxCaption }}</p>
+    <Transition name="lightbox">
+      <div class="lightbox" v-if="lightboxOpen" @click.self="closeLightbox">
+        <button class="lightbox-close" aria-label="Fermer" @click="closeLightbox">
+          <AppIcon name="close" :size="26" />
+        </button>
+        <Transition name="lightbox-zoom" appear>
+          <div class="lightbox-content" :key="lightboxCaption">
+            <div class="lightbox-ph" :style="lightboxStyle"></div>
+            <p class="lightbox-caption">{{ lightboxCaption }}</p>
+          </div>
+        </Transition>
       </div>
-    </div>
+    </Transition>
   </section>
 </template>
 

@@ -52,6 +52,13 @@ public/              favicon
 - **Photos réelles** : la galerie, le portrait du Khalife et les vignettes
   d'actualités utilisent des dégradés de couleur en attendant vos vraies
   photos (à placer dans `public/` ou `src/assets/`).
+- **Portrait de Cheikh Ahmadou Bamba (hero)** : `public/cheikh-portrait.jpg`
+  est déjà en place. C'est l'unique photographie connue de Serigne Touba
+  (~1913-1923), domaine public, récupérée sur Wikimedia Commons
+  ([source](https://commons.wikimedia.org/wiki/File:AhmaduBamba.jpg),
+  utilisée par les pages Wikipédia FR/EN et de nombreuses autres langues —
+  c'est le portrait standard reconnu). Remplacez-la par une version haute
+  définition si le dahira en possède une de confiance.
 - **Coordonnées, réseaux sociaux, moyens de paiement (Wave/OM/PayPal/IBAN)**
   et **adresse Google Maps** : actuellement des exemples, à remplacer par
   les vraies informations du dahira.
