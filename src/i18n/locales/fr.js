@@ -1,0 +1,223 @@
+export default {
+  meta: {
+    title: "Dahira Nooru Touba — Association religieuse mouride",
+    description:
+      "Dahira Nooru Touba : association mouride dédiée à Serigne Touba (Cheikh Ahmadou Bamba). Prières, Xassidas, enseignements, actions sociales et vie communautaire.",
+  },
+  common: {
+    brandTop: "Dahira",
+    brandBottom: "Nooru Touba",
+    ctaJoin: "Nous rejoindre",
+    ctaDonate: "Faire un don",
+    langToggle: "FR / WO",
+    themeToggle: "Basculer le mode sombre",
+  },
+  nav: {
+    apropos: "À propos",
+    khalife: "Le Khalife",
+    evenements: "Événements",
+    galerie: "Galerie",
+    social: "Actions sociales",
+    bibliotheque: "Bibliothèque",
+    actualites: "Actualités",
+    contact: "Contact",
+  },
+  hero: {
+    eyebrow: "Bismillahi Rahmani Rahim",
+    titleLine1: "Dans la lumière de",
+    titleGold: "Serigne Touba",
+    quoteText:
+      "« Celui qui sème le bien récolte la paix ; travaillez comme si vous ne deviez jamais mourir, priez comme si vous deviez mourir demain. »",
+    quoteCite: "— Attribué à Cheikh Ahmadou Bamba (Khadimou Rassoul)",
+    sub: "Le Dahira Nooru Touba rassemble les talibés autour de la prière, des Xassidas, de l'enseignement mouride et des œuvres sociales — dans la fidélité à l'héritage spirituel de Serigne Touba.",
+  },
+  about: {
+    tag: "Notre histoire",
+    title: "Le Dahira, une famille spirituelle",
+    lead: "Un dahira est un cercle de talibés unis par l'amour de Cheikh Ahmadou Bamba (Khadimou Rassoul) et l'engagement au service de sa voie : le travail, la piété, la patience et le don de soi.",
+    missionTitle: "Notre mission",
+    missionP1:
+      "Depuis sa création, le Dahira Nooru Touba accompagne ses membres dans leur cheminement spirituel : réciter et transmettre les Xassidas, organiser les enseignements religieux, préserver la mémoire du mouridisme et soutenir la communauté au quotidien — à Touba comme dans la diaspora.",
+    missionP2:
+      "Nous voulons être un pont entre les générations : offrir aux jeunes un espace vivant, moderne et accueillant pour découvrir et vivre pleinement l'héritage de Serigne Touba.",
+    values: [
+      { title: "Foi & savoir", desc: "Transmission des enseignements et Xassidas de Serigne Touba." },
+      { title: "Unité", desc: "Une communauté fraternelle, solidaire et ouverte à tous." },
+      { title: "Service", desc: "Le travail (Liggéey) comme voie de piété et d'utilité sociale." },
+      { title: "Paix", desc: "La non-violence et la patience héritées de Khadimou Rassoul." },
+    ],
+  },
+  khalife: {
+    tag: "Guide spirituel",
+    title: "Message de bienvenue",
+    quote:
+      "« Chers talibés, que la paix et la baraka de Serigne Touba vous accompagnent. Notre dahira est votre maison : venez-y prier, apprendre, servir et grandir ensemble dans la foi. »",
+    name: "Serigne — Guide du Dahira Nooru Touba",
+    note: "Nom, photo et biographie du Khalife/Muqaddam à compléter par le dahira.",
+  },
+  events: {
+    tag: "Agenda",
+    title: "Activités & événements",
+    lead: "Xassidas hebdomadaires, causeries religieuses, Gamou et Grand Magal de Touba : suivez la vie spirituelle du dahira.",
+    countdown: {
+      title: "Grand Magal de Touba",
+      desc: "Décompte avant la commémoration de l'exil de Cheikh Ahmadou Bamba à Djolof.",
+      days: "jours",
+      hours: "heures",
+      mins: "min",
+      secs: "sec",
+      disclaimer:
+        "Date à confirmer chaque année par le dahira (le calendrier religieux mouride suit le calendrier hégirien).",
+    },
+    cards: [
+      {
+        day: "15",
+        month: "Sept",
+        title: "Xassida hebdomadaire",
+        location: "Siège du dahira — tous les dimanches, 16h00",
+        desc: "Récital collectif des Xassidas de Serigne Touba, suivi d'une causerie.",
+      },
+      {
+        day: "02",
+        month: "Oct",
+        title: "Causerie religieuse",
+        location: "Grande salle du dahira, 20h00",
+        desc: "Thème : « Le travail comme adoration dans le mouridisme ».",
+      },
+      {
+        day: "28",
+        month: "Nov",
+        title: "Gamou du dahira",
+        location: "Cour principale, dès 21h00",
+        desc: "Nuit de Xassidas, de dhikr et de partage communautaire.",
+      },
+      {
+        day: "22",
+        month: "Juil.",
+        title: "Grand Magal de Touba",
+        location: "Nuit du 22 juillet 2027 — départ groupé vers Touba",
+        desc: "Organisation du voyage et de l'accueil des membres du dahira à Touba.",
+      },
+    ],
+  },
+  gallery: {
+    tag: "Souvenirs",
+    title: "Galerie photos & vidéos",
+    lead: "Nos moments forts : cérémonies, Xassidas, Magal et actions sociales.",
+    items: [
+      { caption: "Récital de Xassidas", video: false },
+      { caption: "Départ pour le Magal", video: false },
+      { caption: "Action sociale", video: false },
+      { caption: "Causerie religieuse", video: false },
+      { caption: "Nuit de Gamou (vidéo)", video: true },
+      { caption: "Rencontre des membres", video: false },
+    ],
+    note: "Emplacements réservés — remplacez chaque vignette par vos propres photos/vidéos.",
+  },
+  social: {
+    tag: "Waqf & solidarité",
+    title: "Nos actions sociales",
+    lead: "Suivre la voie de Serigne Touba, c'est aussi servir la communauté. Voici nos principaux engagements.",
+    cards: [
+      { title: "Aide aux talibés", desc: "Soutien alimentaire, sanitaire et éducatif aux talibés des daaras partenaires." },
+      { title: "Solidarité communautaire", desc: "Accompagnement des familles du dahira dans les moments difficiles (santé, deuil, précarité)." },
+      { title: "Bourses & éducation", desc: "Appui scolaire et bourses pour les enfants du dahira et des daaras environnants." },
+      { title: "Organisation du Magal", desc: "Prise en charge logistique (transport, hébergement, restauration) des membres à Touba." },
+    ],
+    banner:
+      "Chaque adiya et chaque don sont utilisés avec transparence, au service des talibés et de la communauté. Voir le détail dans la section :",
+  },
+  library: {
+    tag: "Ressources",
+    title: "Bibliothèque du dahira",
+    lead: "Xassidas, enseignements audio/vidéo et documents à consulter ou télécharger.",
+    cards: [
+      { title: "Xassidas de Serigne Touba", desc: "Recueil des poèmes religieux, texte arabe et translittération.", link: "Télécharger (PDF)" },
+      { title: "Enseignements audio", desc: "Causeries et Waxtaan enregistrés lors des rencontres du dahira.", link: "Écouter" },
+      { title: "Vidéothèque", desc: "Conférences, Gamou et moments forts filmés du dahira.", link: "Regarder" },
+      { title: "Biographie de Serigne Touba", desc: "Documents et livres sur la vie et l'œuvre de Cheikh Ahmadou Bamba.", link: "Télécharger (PDF)" },
+    ],
+  },
+  donate: {
+    tag: "Adiya",
+    title: "Dons & cotisations",
+    lead: "Votre adiya soutient les activités religieuses et sociales du dahira. Chaque contribution, petite ou grande, compte.",
+    wave: "Wave",
+    om: "Orange Money",
+    paypal: "PayPal",
+    bank: "Virement bancaire",
+    bankNote: "IBAN sur demande — contactez-nous",
+    transparency: "Transparence : un rapport financier annuel des adiya collectées et de leur utilisation est partagé avec les membres du dahira.",
+    disclaimer: "Numéros et liens de paiement fournis à titre d'exemple — à remplacer par les coordonnées réelles du dahira.",
+  },
+  join: {
+    tag: "Adhésion",
+    title: "Rejoindre le dahira",
+    desc: "Que vous soyez à Dakar, à Touba ou dans la diaspora, vous êtes le/la bienvenu(e). Remplissez le formulaire ci-contre pour rejoindre notre communauté.",
+    list: [
+      "Accès aux Xassidas et enseignements",
+      "Invitations aux événements du dahira",
+      "Participation aux actions sociales",
+    ],
+    form: {
+      name: "Nom complet",
+      phone: "Téléphone",
+      city: "Ville / Pays",
+      message: "Message (optionnel)",
+      submit: "Envoyer ma demande",
+      success: "Jazakallah ! Votre demande a bien été envoyée.",
+    },
+  },
+  news: {
+    tag: "Blog",
+    title: "Actualités du dahira",
+    lead: "Annonces, comptes-rendus et réflexions autour de la vie du dahira.",
+    readmore: "Lire l'article",
+    articles: [
+      {
+        date: "12 août 2026",
+        title: "Retour sur le Grand Magal de Touba",
+        excerpt: "Le dahira a organisé le déplacement de ses membres à Touba pour la commémoration du Grand Magal...",
+      },
+      {
+        date: "3 juillet 2026",
+        title: "Nouvelle campagne d'aide aux talibés",
+        excerpt: "Le dahira lance une collecte pour soutenir les daaras partenaires avant la rentrée...",
+      },
+      {
+        date: "20 juin 2026",
+        title: "Ouverture des inscriptions au dahira des jeunes",
+        excerpt: "Un nouveau cercle dédié aux jeunes talibés voit le jour, avec des rencontres mensuelles...",
+      },
+    ],
+  },
+  contact: {
+    tag: "Contact",
+    title: "Contactez-nous",
+    lead: "Une question, une suggestion, une demande de partenariat ? Écrivez-nous.",
+    form: {
+      name: "Nom",
+      email: "Email",
+      message: "Message",
+      submit: "Envoyer le message",
+      success: "Merci, votre message a bien été envoyé.",
+    },
+    info: {
+      address: "Dakar, Sénégal",
+      phone: "+221 77 000 00 00",
+      email: "contact@dahira-noorutouba.sn",
+    },
+  },
+  footer: {
+    tagline: "Association mouride dédiée à l'héritage spirituel de Cheikh Ahmadou Bamba (Serigne Touba).",
+    navTitle: "Navigation",
+    coordsTitle: "Coordonnées",
+    legalTitle: "Légal",
+    legalLinks: ["Mentions légales", "Politique de confidentialité"],
+    quote: "« Le travail fait partie de la religion. » — Attribué à Cheikh Ahmadou Bamba",
+    quoteDisclaimer: "(citation à vérifier avant publication)",
+    rights: "Tous droits réservés.",
+  },
+  wolofNotice:
+    "Traduction wolof fournie à titre indicatif : merci de la faire relire par un locuteur natif / un référent religieux avant toute publication officielle.",
+}
