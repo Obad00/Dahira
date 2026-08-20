@@ -7,7 +7,7 @@
       <div class="hero-pattern"></div>
       <div class="hero-grain"></div>
     </div>
-    <div class="container hero-inner" ref="foreEl">
+    <div class="container hero-inner hero-inner--v2" ref="foreEl">
       <p class="eyebrow" v-reveal>{{ t('hero.eyebrow') }}</p>
       <h1 class="hero-title">
         <KineticText :text="t('hero.titleLine1')" tag="span" trigger="load" :delay="0.15" />{{ ' ' }}<span class="text-gold"><KineticText :text="t('hero.titleGold')" tag="span" trigger="load" :delay="0.45" /></span>
@@ -128,3 +128,72 @@ onUnmounted(() => {
   parallaxTrigger?.kill()
 })
 </script>
+
+<style scoped>
+/*
+  Direction visuelle "v2" — proposition frontend-design, Hero uniquement.
+  Écrit en scoped pour ne rien changer ailleurs sur le site : Vue ajoute un
+  attribut data-v-xxxx à chaque élément de CE composant, donc même en
+  réutilisant les mêmes noms de classe (.hero-gradient, .hero-title, ...),
+  ces règles ne peuvent matcher que le Hero. Aucun fichier partagé touché.
+
+  Palette (teinture indigo, pas un bleu SaaS générique) :
+  Indigo Nuit #0A1130 · Indigo Teinture #16215C · Bleu Wax #33449E
+  Ciel Poudré #A9BFEF · Sable #F4EFE3 · Or Bazin #C79A42
+*/
+
+.hero-gradient{
+  background:
+    radial-gradient(circle at 18% 24%, rgba(51,68,158,.45), transparent 55%),
+    radial-gradient(circle at 82% 18%, rgba(169,191,239,.22), transparent 50%),
+    radial-gradient(circle at 85% 82%, rgba(199,154,66,.18), transparent 50%),
+    linear-gradient(160deg,#0A1130,#16215C 55%,#33449E);
+}
+
+.hero-inner--v2{ text-align:left; }
+
+/* Eyebrow : petites capitales tranquilles plutôt qu'italique doré décoratif */
+.hero-inner--v2 .eyebrow{
+  font-family:var(--font-body);
+  font-style:normal;
+  text-transform:uppercase;
+  font-weight:600;
+  font-size:.72rem;
+  letter-spacing:.24em;
+  color:rgba(244,239,227,.7);
+}
+
+/* Titre : Amiri droit et bold — registre "déclaration", réservé de l'italique */
+.hero-inner--v2 .hero-title{
+  font-weight:700;
+  font-style:normal;
+  letter-spacing:-.025em;
+  color:#F4EFE3;
+}
+.hero-inner--v2 .text-gold{ color:#C79A42; }
+
+/* Citation + portrait : plaque commémorative désaxée à gauche, pas centrée */
+.hero-inner--v2 .hero-quote-row{ margin:0 auto 22px 0; }
+.hero-inner--v2 .hero-portrait-ring{ border-color:#C79A42; opacity:.8; }
+.hero-inner--v2 .hero-quote{
+  background:linear-gradient(180deg, rgba(244,239,227,.08), rgba(244,239,227,.03));
+  border:none;
+  border-top:2px solid #C79A42;
+  border-radius:4px 18px 18px 4px;
+  box-shadow:0 20px 50px rgba(6,10,30,.35);
+}
+.hero-inner--v2 .hero-quote svg{ color:#C79A42; }
+.hero-inner--v2 .hero-quote cite{ color:#A9BFEF; }
+
+.hero-inner--v2 .hero-sub{ margin-left:0; color:#C3D3F5; }
+.hero-inner--v2 .hero-cta{ justify-content:flex-start; }
+.hero-inner--v2 .hero-scroll{ margin-left:0; color:#A9BFEF; }
+
+@media(max-width:640px){
+  /* Le désaxage n'a plus de sens en colonne étroite : on recentre. */
+  .hero-inner--v2{ text-align:center; }
+  .hero-inner--v2 .hero-quote-row{ margin:0 auto 22px; }
+  .hero-inner--v2 .hero-cta{ justify-content:center; }
+}
+</style>
+

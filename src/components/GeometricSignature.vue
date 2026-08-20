@@ -7,8 +7,8 @@
     <svg viewBox="0 0 400 400" class="geo-svg">
       <defs>
         <linearGradient id="geoGrad" x1="0" y1="0" x2="400" y2="400">
-          <stop offset="0" stop-color="#8fb8f0" />
-          <stop offset="1" stop-color="#c9a24b" />
+          <stop offset="0" stop-color="#9aaede" />
+          <stop offset="1" stop-color="#c79a42" />
         </linearGradient>
       </defs>
       <g class="geo-ring geo-ring--slow">

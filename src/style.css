@@ -1,33 +1,36 @@
 /* ============================================================
    DAHIRA NOORU TOUBA — Feuille de style
-   Palette : bleu nuit / bleu royal / bleu ciel / blanc / or discret
+   Palette "teinture indigo" — validée sur le Hero, propagée au site :
+   Indigo Nuit · Indigo Teinture · Bleu Wax · Ciel Poudré · Sable · Or Bazin
+   (référence : teinture indigo et bazin riche, textiles ouest-africains —
+   pas un bleu SaaS générique)
    ============================================================ */
 
 /* ---------- Design tokens ---------- */
 :root{
-  --blue-950:#050f26;
-  --blue-900:#0a1c42;
-  --blue-800:#0f2a5e;
-  --blue-700:#153a80;
-  --blue-600:#1e4fa3;
-  --blue-500:#2f6bd6;
-  --blue-400:#5b93e6;
-  --blue-300:#8fb8f0;
-  --blue-200:#c3dafb;
-  --blue-100:#e8f0fd;
-  --blue-50:#f5f9ff;
+  --blue-950:#0a1130; /* Indigo Nuit */
+  --blue-900:#101b4a;
+  --blue-800:#16215c; /* Indigo Teinture */
+  --blue-700:#1f2e74;
+  --blue-600:#33449e; /* Bleu Wax */
+  --blue-500:#4358b0;
+  --blue-400:#6e86c9;
+  --blue-300:#9aaede;
+  --blue-200:#c7d3ef; /* Ciel Poudré */
+  --blue-100:#e9edf8;
+  --blue-50:#f6f3ea;  /* Sable — pâle chaud, pas bleu glacé */
   --white:#ffffff;
-  --gold:#c9a24b;
-  --gold-soft:#e7d6a5;
+  --gold:#c79a42;      /* Or Bazin */
+  --gold-soft:#e4ce9e;
 
   --bg:var(--white);
   --bg-alt:var(--blue-50);
   --surface:var(--white);
   --surface-glass:rgba(255,255,255,.6);
-  --text:#0c1c3a;
-  --text-soft:#425a86;
+  --text:#10173a;
+  --text-soft:#4b5a94;
   --text-inverse:var(--white);
-  --border:rgba(15,42,94,.1);
+  --border:rgba(22,33,92,.12);
   --header-bg:rgba(255,255,255,.75);
 
   --font-body:'Poppins', 'Segoe UI', sans-serif;
@@ -36,36 +39,36 @@
   --radius-sm:10px;
   --radius-md:18px;
   --radius-lg:28px;
-  --shadow-sm:0 4px 16px rgba(10,28,66,.06);
-  --shadow-md:0 14px 40px rgba(10,28,66,.12);
-  --shadow-lg:0 24px 60px rgba(10,28,66,.18);
+  --shadow-sm:0 4px 16px rgba(10,17,48,.06);
+  --shadow-md:0 14px 40px rgba(10,17,48,.12);
+  --shadow-lg:0 24px 60px rgba(10,17,48,.18);
   --ease:cubic-bezier(.22,.68,.32,1);
   --container:1180px;
 }
 
 :root[data-theme="dark"]{
   --bg:var(--blue-950);
-  --bg-alt:#081733;
-  --surface:#0d2149;
-  --surface-glass:rgba(15,32,70,.55);
+  --bg-alt:#0f1638;
+  --surface:#141f52;
+  --surface-glass:rgba(20,31,82,.55);
   --text:var(--blue-50);
   --text-soft:var(--blue-300);
   --text-inverse:var(--white);
   --border:rgba(255,255,255,.1);
-  --header-bg:rgba(6,15,38,.7);
+  --header-bg:rgba(10,17,48,.7);
 }
 
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --bg:var(--blue-950);
-    --bg-alt:#081733;
-    --surface:#0d2149;
-    --surface-glass:rgba(15,32,70,.55);
+    --bg-alt:#0f1638;
+    --surface:#141f52;
+    --surface-glass:rgba(20,31,82,.55);
     --text:var(--blue-50);
     --text-soft:var(--blue-300);
     --text-inverse:var(--white);
     --border:rgba(255,255,255,.1);
-    --header-bg:rgba(6,15,38,.7);
+    --header-bg:rgba(10,17,48,.7);
   }
 }
 
@@ -280,7 +283,7 @@ input,textarea{font-family:inherit;}
     url('/cheikh-portrait.jpg'),
     linear-gradient(140deg,var(--blue-400),var(--blue-700));
   background-size:cover;background-position:center 12%; /* photo en pied : on cadre sur le visage, pas le torse */
-  box-shadow:0 10px 30px rgba(5,15,38,.4);
+  box-shadow:0 10px 30px rgba(10,17,48,.4);
 }
 .hero-portrait-ring{
   position:absolute;inset:-8px;border-radius:50%;
@@ -444,7 +447,7 @@ input,textarea{font-family:inherit;}
 }
 .gallery-item::after{
   content:"";position:absolute;inset:0;
-  background:linear-gradient(to top,rgba(5,15,38,.75),transparent 55%);
+  background:linear-gradient(to top,rgba(10,17,48,.75),transparent 55%);
   opacity:0;transition:opacity .35s var(--ease);
 }
 .gallery-item:hover::after{opacity:1;}
@@ -549,7 +552,7 @@ input,textarea{font-family:inherit;}
   transition:border-color .25s, box-shadow .25s;
 }
 .form-row input:focus,.form-row textarea:focus{
-  outline:none;border-color:var(--blue-500);box-shadow:0 0 0 3px rgba(47,107,214,.18);
+  outline:none;border-color:var(--blue-500);box-shadow:0 0 0 3px rgba(67,88,176,.18);
 }
 .form-success{
   margin-top:14px;padding:12px 14px;border-radius:10px;
@@ -620,7 +623,7 @@ input,textarea{font-family:inherit;}
   position:fixed;inset:0;z-index:500;
   display:flex;align-items:center;justify-content:center;
   padding:30px;
-  background:rgba(5,15,38,.75);
+  background:rgba(10,17,48,.75);
   backdrop-filter:blur(14px) saturate(120%);
   -webkit-backdrop-filter:blur(14px) saturate(120%);
 }

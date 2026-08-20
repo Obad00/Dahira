@@ -12,8 +12,8 @@
         />
         <defs>
           <linearGradient id="loaderGrad" x1="0" y1="0" x2="24" y2="24">
-            <stop offset="0" stop-color="#8fb8f0" />
-            <stop offset="1" stop-color="#c9a24b" />
+            <stop offset="0" stop-color="#9aaede" />
+            <stop offset="1" stop-color="#c79a42" />
           </linearGradient>
         </defs>
       </svg>
@@ -60,9 +60,9 @@ onMounted(() => {
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;
   background:linear-gradient(160deg,var(--blue-950),var(--blue-800));
 }
-.loader-mark{filter:drop-shadow(0 0 18px rgba(143,184,240,.35));}
+.loader-mark{filter:drop-shadow(0 0 18px rgba(154,174,222,.35));}
 .loader-word{
-  font-family:var(--font-display);font-style:italic;color:var(--blue-100);
+  font-family:var(--font-display);font-weight:700;color:var(--blue-100);
   font-size:1rem;letter-spacing:.02em;
   opacity:0;transform:translateY(8px);
 }
